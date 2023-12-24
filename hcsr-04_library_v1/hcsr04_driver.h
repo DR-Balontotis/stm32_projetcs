@@ -11,7 +11,7 @@
 #include <stdint.h>
 #include "stm32f4xx_hal.h"
 
-#define TIMER_MAX_VALUE 				0xffff			// max value of the use timer
+#define TIMER_MAX_VALUE					0xffff			// max value of the use timer
 #define READ_DELAY_TIME_IN_MS			100				// delay value of waiting after sending request
 
 #define DIFF_CALC(FIRST, LAST)			((LAST > FIRST) ? (LAST - FIRST) : ((TIMER_MAX_VALUE - FIRST) + LAST))		// calculate the difference between two times
@@ -22,9 +22,9 @@
 typedef struct sHCSR04
 {
 	TIM_HandleTypeDef 				*htim;				// user timer
-	GPIO_TypeDef* 					TrigPort;			// port of hcsr04 module's trigger pin
-	uint16_t 						TrigPin;			// pin of hcsr04 module's trigger pin
-	HAL_TIM_ActiveChannel           TimerChannel;		// Echo pin and timer channel
+	GPIO_TypeDef*					TrigPort;			// port of hcsr04 module's trigger pin
+	uint16_t						TrigPin;			// pin of hcsr04 module's trigger pin
+	HAL_TIM_ActiveChannel			TimerChannel;		// Echo pin and timer channel
 	uint32_t						CurrentDistance;	// current distance
 } hcsr04;
 
@@ -35,7 +35,7 @@ typedef struct sHCSR04
  *		 	_htim 			-> 		timer for hcsr04
  *		 	TrigPort 		-> 		port value of hcsr04's trigger pin
  *		 	TrigPin 		-> 		pin value of hcsr04's trigger pin
- *		 	_TimerChannel 	-> 		connecting echo pin of hcsr04 module to the timer channel
+ *		 	_TimerChannel	-> 		connecting echo pin of hcsr04 module to the timer channel
  *		 OUT:
  *		 	(int) 0 is success, else fail
  */
